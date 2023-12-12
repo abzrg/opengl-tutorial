@@ -1,0 +1,28 @@
+Diagnostics:
+  UnusedIncludes: Strict
+
+---
+
+If:
+  PathMatch: /usr/include/.*
+
+Diagnostics:
+  Suppress: "*"
+
+---
+
+If:
+  PathMatch: .*\.cpp
+
+CompileFlags:
+  Add: [-std=c++20, -pedantic, -Wall, -Wextra, -Wunused-parameter, -g]
+  Compiler: g++
+
+---
+
+If:
+  PathMatch: .*\.c
+
+CompileFlags:
+  Add: [-std=c11, -Wall, -Wextra, -g]
+  Compiler: gcc
