@@ -1,18 +1,9 @@
-# add_executable(main main.cpp)
-# target_link_libraries(main
-#     PRIVATE glfw
-#     PRIVATE glad
-# )
+set(TARGETS main)
 
-foreach(TARGET
-        main
-        triangle
-    )
-
+foreach(TARGET ${TARGETS})
     add_executable(${TARGET} ${TARGET}.cpp)
     target_link_libraries(${TARGET}
         PUBLIC glfw
         PUBLIC glad
     )
-
 endforeach()
